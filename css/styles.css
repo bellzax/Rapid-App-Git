@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document for project */
+
+body{
+	font-size: 14px;
+	color: white;
+}
+body:before{
+  background-image: url("http://www.publicdomainpictures.net/pictures/100000/velka/puerto-de-ferrol.jpg");
+  background-size:cover;
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  height: 105%;
+  filter: blur(2px);
+  margin: -5px -5px -5px -5px;
+}
+#container{
+	overflow: hidden;
+}
+#header_container{
+	background-color: rgba(222,142,99,1.00);
+	overflow: hidden;
+	border-bottom: thick solid rgba(182,88,39,1.00);
+}
+#header{
+	padding: 5px;
+	margin: 0 auto;
+	max-width: 590px;
+}
+#header img{
+	width: 150px;
+	float: left;
+}
+#title{
+	padding: 5px;
+	/*background-color: rgba(59,59,59,0.60);*/
+	font-size: 28px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	float: left;
+	margin-top: 7px;
+	text-align: center;
+}
+#results{
+	padding: 5px;
+    background: rgba(217,120,69,1.00);
+	overflow: hidden;
+}
+#sighting_title{
+	font-size: 20px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: normal;
+}
+#sighting_des{
+	margin-top: 5px;
+	font-size: 16px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: normal;
+}
+#dropdown{
+	margin-top: 15px;
+	font-size: 16px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: normal;
+}
+#ajaxButton{
+	background: rgba(135,135,135,1.00);
+	padding: 5px;
+	margin-top: 15px;
+	text-align: center;
+	color: rgba(255,255,255,1.00);
+	cursor: pointer;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	width: 80px
+}
+#newsighting{
+	font-size: 18px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: bold;
+	background: rgba(217,120,69,1.00);
+	padding: 5px;
+	overflow: hidden;
+	border-left: thick solid rgba(182,88,39,1.00);
+}
+#newsighting input{
+	float: left;
+	clear: both;
+	width: 99%
+}
+#newsighting input[type="button"]{
+	float: left;
+	clear: both;
+	width: 100%;
+}
+#newsighting label{
+	float: left;
+	clear: both;
+	font-size: 14px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+
+
+
+/*GRID STYLES*/
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 0;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+
+/*  GRID OF THREE  */
+.span_3_of_3 { width: 100%; }
+.span_2_of_3 { width: 68%; }
+.span_1_of_3 { width: 34%; }
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
+}
+
