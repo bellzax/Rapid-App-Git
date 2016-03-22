@@ -24,7 +24,7 @@
 			}
 		</script>
 		<script>
-			$(function(){
+/*			$(function(){
 				$("<img/>").ajaxStart(function() {
 					$("#sighting_des").text("Loading...");
 				});
@@ -34,6 +34,25 @@
 				
 				$("button").click(function(){
 				$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=crop%20circle&tagmode=any&per_page=5&format=json&jsoncallback=?",
+					function(data){
+					  $.each(data.items, function(i,item){
+						$("<img/>").attr("src", item.media.m).appendTo("#sighting_des");
+						if ( i == 3 ) return false;
+					  });
+					});
+				});
+			});*/
+			
+			$(function(){
+				$("<img/>").ajaxStart(function() {
+					$("#sighting_des").text("Loading...");
+				});
+				$("<img/>").ajaxComplete(function() {
+					$("#sighting_des").text("");
+				});
+				
+				$("button").click(function(){
+				$.getJSON("https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&user_id=29096781@N02&format=json&per_page=500",
 					function(data){
 					  $.each(data.items, function(i,item){
 						$("<img/>").attr("src", item.media.m).appendTo("#sighting_des");
