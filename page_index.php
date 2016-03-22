@@ -5,8 +5,13 @@
     <head>
         <title>Assignment 01 AJAX – Zachary Bell</title>
         <meta charset="utf-8">
+        
         <link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+        
+        <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>   
         
         <script type="text/javascript">
 			//placeholder text fall back support
@@ -18,12 +23,31 @@
 				}
 			}
 		</script>
+		<script>
+			$(function(){
+				$("<img/>").ajaxStart(function() {
+					$("#sighting_des").text("Loading...");
+				});
+				$("<img/>").ajaxComplete(function() {
+					$("#sighting_des").text("");
+				});
+				
+				$("button").click(function(){
+				$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=crop%20circle&tagmode=any&per_page=5&format=json&jsoncallback=?",
+					function(data){
+					  $.each(data.items, function(i,item){
+						$("<img/>").attr("src", item.media.m).appendTo("#sighting_des");
+						if ( i == 3 ) return false;
+					  });
+					});
+				});
+			});
+        </script>
     </head>
-    
     <body>
         <div id="container">
-            <div class="section group">
-                <div class="col span_2_of_3">
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1">
                     <div id="header_container">
                         <div id="header">
                             <img alt="ufo logo" src="img/logo.png">
@@ -34,8 +58,9 @@
                     </div>
                 </div>
             </div>
-            <div class="section group">
-                <div class="col span_1_of_3">
+            
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
                     <div id="results">
                         <h2 id="sighting_title">
                             Find the most recent sighting
@@ -46,9 +71,10 @@
                         <div id="ajaxButton">               
                             Load Data
                         </div>
+                        <button>Gimmie Some Cats</button>
                     </div>
                 </div>
-                <div class="col span_1_of_4">
+<!--                <div class="pure-u-1 pure-u-md-1-3">
                         <div id="dropdown">
                             Where do you live?
                             <br>
@@ -107,9 +133,8 @@
                                 <option value="WY">Wyoming</option>
                             </select>
                         </div>
-                    </div>
-                </div>
-                <div class="col span_1_of_3">
+                    </div>-->
+                <div class="pure-u-1 pure-u-md-1-2">
                     <div id="newsighting">
                         Post a New Sighting
                         <form method="POST">
@@ -132,7 +157,6 @@
             </div>
         </div>
         
-    <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>   
     <script type="application/javascript" src="js/ajax.js"></script>
     </body>
 </html>
