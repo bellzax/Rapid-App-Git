@@ -6,8 +6,8 @@ body{
 	color: white;
 }
 body:before{
-  background-image: url("http://www.publicdomainpictures.net/pictures/100000/velka/puerto-de-ferrol.jpg");
-  background-size:cover;
+/*  background-image: url("http://www.publicdomainpictures.net/pictures/100000/velka/puerto-de-ferrol.jpg");
+  background-size:cover;*/
   content: "";
   position: fixed;
   left: 0;

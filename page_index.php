@@ -22,44 +22,15 @@
 					field.value = field.defaultValue;
 				}
 			}
-		</script>
-		<script>
-/*			$(function(){
-				$("<img/>").ajaxStart(function() {
-					$("#sighting_des").text("Loading...");
-				});
-				$("<img/>").ajaxComplete(function() {
-					$("#sighting_des").text("");
-				});
-				
-				$("button").click(function(){
-				$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=crop%20circle&tagmode=any&per_page=5&format=json&jsoncallback=?",
-					function(data){
-					  $.each(data.items, function(i,item){
-						$("<img/>").attr("src", item.media.m).appendTo("#sighting_des");
-						if ( i == 3 ) return false;
-					  });
+
+			var apiurl, myresult;
+			apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&tags=crop+circle&per_page=1&format=json&nojsoncallback=1";
+			$(document).ready(function() {
+					$.getJSON(apiurl, function(json) {
+						$.each(json.photos.photo, function(i, myresult) {
+							$('body').css('background', 'url(https://farm6.staticflickr.com/' + myresult.server + '/' + myresult.id + '_' + myresult.secret + '_h.jpg) no-repeat scroll left top / cover');
+						});
 					});
-				});
-			});*/
-			
-			$(function(){
-				$("<img/>").ajaxStart(function() {
-					$("#sighting_des").text("Loading...");
-				});
-				$("<img/>").ajaxComplete(function() {
-					$("#sighting_des").text("");
-				});
-				
-				$("button").click(function(){
-				$.getJSON("https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&user_id=29096781@N02&format=json&per_page=500",
-					function(data){
-					  $.each(data.items, function(i,item){
-						$("<img/>").attr("src", item.media.m).appendTo("#sighting_des");
-						if ( i == 3 ) return false;
-					  });
-					});
-				});
 			});
         </script>
     </head>
@@ -90,7 +61,6 @@
                         <div id="ajaxButton">               
                             Load Data
                         </div>
-                        <button>Gimmie Some Cats</button>
                     </div>
                 </div>
 <!--                <div class="pure-u-1 pure-u-md-1-3">
