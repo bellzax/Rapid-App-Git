@@ -14,15 +14,6 @@
         <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>   
         
         <script type="text/javascript">
-			//placeholder text fall back support
-			function clearText(field){
-				if(field.defaultValue == field.value){
-					field.value = "";
-				}else if(field.value == ""){
-					field.value = field.defaultValue;
-				}
-			}
-
 			var apiurl, myresult;
 			apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&tags=crop+circle&per_page=1&format=json&nojsoncallback=1";
 			$(document).ready(function() {
@@ -50,7 +41,7 @@
             </div>
             
             <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-2">
+                <div class="pure-u-1 pure-u-md-1-3">
                     <div id="results">
                         <h2 id="sighting_title">
                             Find the most recent sighting
@@ -58,14 +49,14 @@
                         <h3 id="sighting_des">&nbsp;
                         	
                         </h3>
-                        <div id="ajaxButton">               
+                        <div id="ajaxButton" class="pure-button pure-button-primary">               
                             Load Data
                         </div>
-                        <button id="play">Play</button>
-                        <button id="pause">Stop</button>
+                        <button class="pure-button" id="play">Play</button>
+                        <button class="pure-button" id="pause">Stop</button>
                     </div>
                 </div>
-<!--                <div class="pure-u-1 pure-u-md-1-3">
+                <div class="pure-u-1 pure-u-md-1-3">
                         <div id="dropdown">
                             Where do you live?
                             <br>
@@ -124,24 +115,26 @@
                                 <option value="WY">Wyoming</option>
                             </select>
                         </div>
-                    </div>-->
-                <div class="pure-u-1 pure-u-md-1-2">
+                    </div>
+                <div class="pure-u-1 pure-u-md-1-3">
                     <div id="newsighting">
                         Post a New Sighting
-                        <form method="POST">
+                        <form method="POST" class="pure-form pure-form-stacked">
+                         <fieldset>
                             <label for="newtitle">
                                 Name your Sighting
                             </label>
-                            <input id="newtitle" required type="text" name="newtitle" placeholder="Sighting Title" value="Sighting Title" onFocus="clearText(this)" onBlur="clearText(this)">
+                            <input id="newtitle" required type="text" name="newtitle" placeholder="Sighting Title" value="" onFocus="clearText(this)" onBlur="clearText(this)">
                             <label for="newdes">
                                 Describe what you saw
                             </label>
-                            <input id="newdes" required type="text" name="newdes" placeholder="Sighting Description" value="Sighting Description" onFocus="clearText(this)" onBlur="clearText(this)">
+                            <input id="newdes" required type="text" name="newdes" placeholder="Sighting Description" value="" onFocus="clearText(this)" onBlur="clearText(this)">
                             <label for="newloc">
                                 Where did you see it
                             </label>
-                            <input id="newloc" required type="text" name="newloc" placeholder="Sighting Location" value="Sighting Location" onFocus="clearText(this)" onBlur="clearText(this)">
-                            <input id="newsubmit" type="button" value="Submit a Sighting">
+                            <input id="newloc" required type="text" name="newloc" placeholder="Sighting Location" value="" onFocus="clearText(this)" onBlur="clearText(this)">
+                            <input class="pure-button pure-button-primary" id="newsubmit" type="button" value="Submit a Sighting">
+                         <fieldset>
                         </form>
                     </div>
                 </div>

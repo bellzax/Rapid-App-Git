@@ -24,7 +24,6 @@ body:before{
 #header_container{
 	background-color: rgba(222,142,99,1.00);
 	overflow: hidden;
-	border-bottom: thick solid rgba(182,88,39,1.00);
 }
 #header{
 	padding: 5px;
@@ -48,6 +47,7 @@ body:before{
 	padding: 5px;
     background: rgba(217,120,69,1.00);
 	overflow: hidden;
+	border-top: thick solid rgba(182,88,39,1.00);
 }
 #sighting_title{
 	font-size: 20px;
@@ -61,20 +61,17 @@ body:before{
 	font-weight: normal;
 }
 #dropdown{
-	margin-top: 15px;
 	font-size: 16px;
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-weight: normal;
+	background: rgba(217,120,69,1.00);
+	padding: 5px;
+	overflow: hidden;
+	border-left: thick solid rgba(182,88,39,1.00);
+	border-top: thick solid rgba(182,88,39,1.00);
 }
 #ajaxButton{
-	background: rgba(135,135,135,1.00);
-	padding: 5px;
 	margin-top: 15px;
-	text-align: center;
-	color: rgba(255,255,255,1.00);
-	cursor: pointer;
-	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	width: 80px
 }
 #newsighting{
 	font-size: 18px;
@@ -84,16 +81,19 @@ body:before{
 	padding: 5px;
 	overflow: hidden;
 	border-left: thick solid rgba(182,88,39,1.00);
+	border-top: thick solid rgba(182,88,39,1.00);
 }
-#newsighting input{
+#newsighting input, select{
 	float: left;
 	clear: both;
-	width: 99%
+	width: 100%;
+	color: gray;
 }
 #newsighting input[type="button"]{
 	float: left;
 	clear: both;
 	width: 100%;
+	color: white;
 }
 #newsighting label{
 	float: left;
@@ -104,39 +104,3 @@ body:before{
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
-
-
-
-
-/*GRID STYLES*/
-/*  SECTIONS  */
-.section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
-}
-
-/*  COLUMN SETUP  */
-.col {
-	display: block;
-	float:left;
-	margin: 0;
-}
-.col:first-child { margin-left: 0; }
-
-/*  GROUPING  */
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-
-/*  GRID OF THREE  */
-.span_3_of_3 { width: 100%; }
-.span_2_of_3 { width: 68%; }
-.span_1_of_3 { width: 34%; }
-
-/*  GO FULL WIDTH BELOW 480 PIXELS */
-@media only screen and (max-width: 480px) {
-	.col {  margin: 1% 0 1% 0%; }
-	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
-}
-
