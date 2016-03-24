@@ -18,6 +18,11 @@ body:before{
   filter: blur(2px);
   margin: -5px -5px -5px -5px;
 }
+h2{
+	font-size: 20px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: normal;
+}
 #container{
 	overflow: hidden;
 }
@@ -44,15 +49,10 @@ body:before{
 	text-align: center;
 }
 #results{
-	padding: 5px;
+	padding: 10px;
     background: rgba(217,120,69,1.00);
 	overflow: hidden;
 	border-top: thick solid rgba(182,88,39,1.00);
-}
-#sighting_title{
-	font-size: 20px;
-	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	font-weight: normal;
 }
 #sighting_des{
 	margin-top: 5px;
@@ -65,12 +65,12 @@ body:before{
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-weight: normal;
 	background: rgba(217,120,69,1.00);
-	padding: 5px;
+	padding: 10px;
 	overflow: hidden;
 	border-left: thick solid rgba(182,88,39,1.00);
 	border-top: thick solid rgba(182,88,39,1.00);
 }
-#ajaxButton{
+#loadUFO{
 	margin-top: 15px;
 }
 #newsighting{
@@ -78,7 +78,7 @@ body:before{
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-weight: bold;
 	background: rgba(217,120,69,1.00);
-	padding: 5px;
+	padding: 10px;
 	overflow: hidden;
 	border-left: thick solid rgba(182,88,39,1.00);
 	border-top: thick solid rgba(182,88,39,1.00);
@@ -88,6 +88,9 @@ body:before{
 	clear: both;
 	width: 100%;
 	color: gray;
+}
+select{
+	height: 2.60em !important;
 }
 #newsighting input[type="button"]{
 	float: left;
@@ -103,4 +106,10 @@ body:before{
 	font-weight: bold;
 	margin-top: 10px;
 	margin-bottom: 5px;
+}
+
+@media screen and (max-width: 48em){
+	#newsighting, #dropdown{
+		border-left: none;
+	}
 }

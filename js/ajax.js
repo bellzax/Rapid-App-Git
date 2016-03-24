@@ -58,7 +58,7 @@ function sighting_post() {
 }
 
 //xml to json info load
-$("#ajaxButton").click(function(){
+$("#loadUFO").click(function(){
 	makeRequest();
 });
 function makeRequest() {	
@@ -78,7 +78,7 @@ function makeRequest() {
 			$("#sighting_title").html("The most recently reported UFO sighting: <br><br>"+ obj.Title);
 			$("#sighting_des").html(obj.ShortDes);
 			console.log("sucess");
-			console.log(data);
+			console.log(data);			
 		 },
 		 error: function(data){
 			console.log("error");
