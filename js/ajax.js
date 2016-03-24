@@ -68,10 +68,10 @@ function ajax_post() {
 		 cache: false,
 		 success: function(data) {
 			var return_data = data;	
-			obj = jQuery.parseJSON(return_data);
-			$("#sighting_des").html(obj);
+			//obj = jQuery.parseJSON(return_data);
+			//$("#sighting_des").html(obj);
 			console.log("sucess");
-			console.log(data);
+			console.log(return_data);
 		 },
 		 error: function(data){
 			console.log("error");

@@ -3,7 +3,7 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	$locationSelection = $_POST['ufoLoc'];
   }else{
-	  $locationSelection = "";
+	  $locationSelection = "Florida";
   }
 
   //get the most recent ufo sightings conditions
@@ -14,7 +14,7 @@
   //pull out the current sightings and store as JSON
   
   $pattern = "/".$locationSelection."/";
-  echo $pattern;
+  echo $pattern."<br>";
   
    //$test = array();
   foreach ($ufoData->channel->item as $sightData) {
@@ -23,6 +23,7 @@
 	  $stateMatch = preg_grep($pattern, explode("\n", $sightData->title));
 	  //echo out the sightings that match the state selected
 	  $stateImplode=implode(",",$stateMatch);
+	  echo $stateImplode."<br>";
 	  //$test['title'] = $stateMatch;
 	  // echo json_encode($test);
   }
