@@ -23,7 +23,7 @@
 	  $sightingTitle = $ufoData->channel->item[0]->title;
 	  
 	  foreach ($sightingTitle as $y) {
-		  $x=explode("-",$y);
+		  $x=explode(" - ",$y);
 		  $title = $x[0];
 		  $title = str_replace('"', "", $title);
 		  $title = str_replace("'", "", $title);
