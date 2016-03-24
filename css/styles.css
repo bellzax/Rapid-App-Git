@@ -107,9 +107,29 @@ select{
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
+#audioplayer{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background: rgba(217,120,69,0.70);
+	padding: 15px;
+	border-top: medium solid rgba(182,88,39,1.00);
+	border-left: medium solid rgba(182,88,39,1.00);
+}
+#audioplayer h2{
+	margin-bottom: 10px;
+}
 
 @media screen and (max-width: 48em){
 	#newsighting, #dropdown{
 		border-left: none;
+	}
+	#audioplayer{
+		position: relative;
+		float: left;
+		background: rgba(217,120,69,1.00);
+		border-top: thick solid rgba(182,88,39,1.00);
+		border-left: none;
+		padding: 10px;
 	}
 }

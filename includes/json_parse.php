@@ -1,4 +1,11 @@
 <?php
+  //randmoize music selection on ufo data load
+  $files = glob('data/music/*.mp3');
+  $filename = $files[array_rand($files)];	
+  $fname = basename($filename, ".mp3");	
+  $fname = explode("-",$fname);
+  $fname=implode(" - ",$fname); 
+
   //state selection
   $feed_updated = filemtime("data/ufo_data.xml");
   $current_time = time();
@@ -51,8 +58,6 @@
 		 //ajax call is grabing data from the sighting.txt json file, and since we didn't update the file it is using the cached verison
 		 //echo "file is cached";
   }
-
-  
 ?>
   
 

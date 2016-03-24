@@ -12,19 +12,9 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         
         <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>   
-        
-        <script type="text/javascript">
-			var apiurl, myresult;
-			apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&tags=crop+circle&per_page=1&format=json&nojsoncallback=1";
-			$(document).ready(function() {
-					$.getJSON(apiurl, function(json) {
-						$.each(json.photos.photo, function(i, myresult) {
-							$('body').css('background', 'url(https://farm6.staticflickr.com/' + myresult.server + '/' + myresult.id + '_' + myresult.secret + '_h.jpg) no-repeat scroll left top / cover');
-						});
-					});
-			});
-        </script>
+        <script type="application/javascript" src="js/ajax.js"></script>
     </head>
+      
     <body>
         <div id="container">
             <div class="pure-g">
@@ -38,8 +28,22 @@
                         </div>
                     </div>
                 </div>
+                <div id="audioplayer" class="hidden pure-u-1 pure-u-md-1-3">
+                	<?php 
+						$files = glob('data/music/*.mp3');
+						$filename = $files[array_rand($files)];	
+						$fname = basename($filename, ".mp3");	
+						$fname = explode("-",$fname);
+						$fname=implode(" - ",$fname);
+									
+                    ?>
+                    <h2>Current Song: <?php echo $fname; ?></h2>
+                    <audio class="audio pure-u-1" controls preload="none"> 
+                       <source src="<?php echo $filename; ?>" type="audio/mpeg">
+                    </audio>
+                </div>
             </div>
-            
+                        
             <div class="pure-g">
                 <div class="pure-u-1 pure-u-md-1-3">
                     <div id="results">
@@ -52,14 +56,12 @@
                         <div id="loadUFO" class="pure-button pure-button-primary">               
                             Load Data
                         </div>
-                        <button class="pure-button" id="play">Play</button>
-                        <button class="pure-button" id="pause">Stop</button>
                     </div>
                 </div>
                 <div class="pure-u-1 pure-u-md-1-3">
-                        <div id="dropdown">
-                          <h2>Where do you live?</h2>
-                          <form method="POST" class="pure-form pure-form-stacked">
+                  <div id="dropdown">
+                    <h2>Where do you live?</h2>
+                    <form method="POST" class="pure-form pure-form-stacked">
                              <fieldset>
                                 <select id="stateSelect" name="state">
                                     <option selected disabled value="">Pick a State</option>
@@ -116,12 +118,8 @@
                                     <option value="WY">Wyoming</option>
                                 </select>
                              </fieldset>
-                         </form>
-                         
-                            <audio class="audioDemo" controls preload="none"> 
-                               <source src="data/RAMONES-ZeroZeroUFO.mp3" type="audio/mpeg">
-                            </audio>
-                        </div>
+                         </form> 
+                  </div>
                     </div>
                 <div class="pure-u-1 pure-u-md-1-3">
                     <div id="newsighting">
@@ -147,29 +145,5 @@
                 </div>
             </div>
         </div>
-        
-    <script type="application/javascript" src="js/ajax.js"></script>
-    <script>
-		$(".audioDemo").trigger('load');
-	</script>
-    <script>
-		$(document).ready(function() {
-			var audioElement = document.createElement('audio');
-			audioElement.setAttribute('src', 'data/RAMONES-ZeroZeroUFO.mp3');
-			
-			audioElement.addEventListener('ended', function() {
-				this.currentTime = 0;
-				this.play();
-			}, false);
-			
-			$('#play').click(function() {
-				audioElement.play();
-			});
-			
-			$('#pause').click(function() {
-				audioElement.pause();
-			});
-		});
-	</script>
     </body>
 </html>
