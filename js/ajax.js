@@ -1,9 +1,12 @@
 // JavaScript Document
 
 //loading flickr image as body background image
-var apiurl, myresult;
-apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&tags=crop+circle&per_page=1&format=json&nojsoncallback=1";
+var apiurl, myresult, pageNum;
+pageNum = Math.floor(Math.random() * 20) + 1;
+console.log(pageNum);
+apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4ef2fe2affcdd6e13218f5ddd0e2500d&tags=crop+circle&per_page="+pageNum+"&format=json&nojsoncallback=1";
 $(document).ready(function() {
+		$('body').css('background', 'url(https://farm6.staticflickr.com/1568/23623376569_89796d818c_h.jpg) no-repeat scroll left top / cover');
 		$.getJSON(apiurl, function(json) {
 			$.each(json.photos.photo, function(i, myresult) {
 				$('body').css('background', 'url(https://farm6.staticflickr.com/' + myresult.server + '/' + myresult.id + '_' + myresult.secret + '_h.jpg) no-repeat scroll left top / cover');

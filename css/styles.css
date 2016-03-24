@@ -4,11 +4,9 @@
 body{
 	font-size: 14px;
 	color: white;
+	background-color: white;
 }
 body:before{
-/*  background-image: url("http://www.publicdomainpictures.net/pictures/100000/velka/puerto-de-ferrol.jpg");
-  background-size:cover;*/
-  content: "";
   position: fixed;
   left: 0;
   right: 0;
