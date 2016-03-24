@@ -11,6 +11,7 @@ $(document).ready(function() {
 		});
 });
 
+
 //song loading and control functions
 var audio;
 $(document).ready(function() {
@@ -51,7 +52,7 @@ function toggleMuteAudio(){
 }
 
 
-//select input field ajax
+//pull in the most recent ufo sighting in your state: select input field ajax
 $(document).ready(function() {
 $("#stateSelect").change(function(){
 	ajax_post();
@@ -62,7 +63,8 @@ function ajax_post() {
  
 	$.ajax({
 	type: "POST",
-	 url: "includes/get_ufo_data.php",
+	 /*url: "includes/get_ufo_data.php",*/
+	 url: "includes/state_ufo_data.php",
 		 data: {"ufoLoc":selectedText},
 		 cache: false,
 		 success: function(data) {
@@ -81,13 +83,13 @@ function ajax_post() {
 });
 
 
-//mysql data ajax
+//Post new sighting: mysql data ajax
 $(document).ready(function() {
 $("#newsubmit").click(function(){
 	sighting_post();
 });
 function sighting_post() {	
-
+	console.log("hello");
 	inputTitle = $("#newtitle").val();
 	inputDes = $("#newdes").val();
 	inputLoc = $("#newloc").val();
@@ -104,6 +106,8 @@ function sighting_post() {
 			$("#sighting_des").html(obj.shortdes);
 			console.log("sucess");
 			console.log(data);
+			startAudio();
+			$("#audioplayer").removeClass("hidden");	
 		 },
 		 error: function(data){
 			console.log("error");
@@ -113,7 +117,8 @@ function sighting_post() {
 }
 });
 
-//xml to json info load
+
+//Pull in the most recent ufo sighting: xml to json info load
 $(document).ready(function() {
 $("#loadUFO").click(function(){
 	makeRequest();

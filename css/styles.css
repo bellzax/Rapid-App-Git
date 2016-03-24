@@ -111,7 +111,7 @@ select{
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	background: rgba(217,120,69,0.70);
+	background: rgba(217,120,69,0.80);
 	padding: 15px;
 	border-top: medium solid rgba(182,88,39,1.00);
 	border-left: medium solid rgba(182,88,39,1.00);

@@ -29,14 +29,6 @@
                     </div>
                 </div>
                 <div id="audioplayer" class="hidden pure-u-1 pure-u-md-1-3">
-                	<?php 
-						$files = glob('data/music/*.mp3');
-						$filename = $files[array_rand($files)];	
-						$fname = basename($filename, ".mp3");	
-						$fname = explode("-",$fname);
-						$fname=implode(" - ",$fname);
-									
-                    ?>
                     <h2>Current Song: <?php echo $fname; ?></h2>
                     <audio class="audio pure-u-1" controls preload="none"> 
                        <source src="<?php echo $filename; ?>" type="audio/mpeg">
@@ -129,15 +121,15 @@
                             <label for="newtitle">
                                 Name your Sighting
                             </label>
-                            <input id="newtitle" required type="text" name="newtitle" placeholder="Sighting Title" value="" onFocus="clearText(this)" onBlur="clearText(this)">
+                            <input id="newtitle" required type="text" name="newtitle" placeholder="Sighting Title" value="">
                             <label for="newdes">
                                 Describe what you saw
                             </label>
-                            <input id="newdes" required type="text" name="newdes" placeholder="Sighting Description" value="" onFocus="clearText(this)" onBlur="clearText(this)">
+                            <input id="newdes" required type="text" name="newdes" placeholder="Sighting Description" value="">
                             <label for="newloc">
                                 Where did you see it
                             </label>
-                            <input id="newloc" required type="text" name="newloc" placeholder="Sighting Location" value="" onFocus="clearText(this)" onBlur="clearText(this)">
+                            <input id="newloc" required type="text" name="newloc" placeholder="Sighting Location" value="">
                             <input class="pure-button pure-button-primary" id="newsubmit" type="button" value="Submit a Sighting">
                          <fieldset>
                         </form>
