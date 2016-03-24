@@ -63,8 +63,7 @@ function ajax_post() {
  
 	$.ajax({
 	type: "POST",
-	 /*url: "includes/get_ufo_data.php",*/
-	 url: "includes/state_ufo_data.php",
+	 url: "includes/get_ufo_data.php",
 		 data: {"ufoLoc":selectedText},
 		 cache: false,
 		 success: function(data) {
