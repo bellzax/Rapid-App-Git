@@ -61,6 +61,8 @@
                         <div id="ajaxButton">               
                             Load Data
                         </div>
+                        <button id="play">Play</button>
+                        <button id="pause">Stop</button>
                     </div>
                 </div>
 <!--                <div class="pure-u-1 pure-u-md-1-3">
@@ -147,5 +149,24 @@
         </div>
         
     <script type="application/javascript" src="js/ajax.js"></script>
+    <script>
+		$(document).ready(function() {
+			var audioElement = document.createElement('audio');
+			audioElement.setAttribute('src', 'data/RAMONES-ZeroZeroUFO.mp3');
+			
+			audioElement.addEventListener('ended', function() {
+				this.currentTime = 0;
+				this.play();
+			}, false);
+			
+			$('#play').click(function() {
+				audioElement.play();
+			});
+			
+			$('#pause').click(function() {
+				audioElement.pause();
+			});
+		});
+	</script>
     </body>
 </html>
