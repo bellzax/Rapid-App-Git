@@ -3,7 +3,7 @@
         require("includes/json_parse.php");
     ?>
     <head>
-        <title>Assignment 01 AJAX – Zachary Bell</title>
+        <title>Assignment 02 AJAX – Zachary Bell</title>
         <meta charset="utf-8">
         
         <link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -42,7 +42,7 @@
                         <h2 id="sighting_title">
                             Find the most recent sighting:
                         </h2>
-                        <h3 id="sighting_des">&nbsp;
+                        <h3 id="sighting_des">
                         	<img id="dataLoad" src="img/ajax-loader.gif" alt="ajax loading gif">
                         </h3>
                         <div id="loadUFO" class="pure-button pure-button-primary">               
