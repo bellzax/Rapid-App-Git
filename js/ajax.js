@@ -72,11 +72,20 @@ function ajax_post() {
 		 data: {"ufoLoc":selectedText},
 		 cache: false,
 		 success: function(data) {
-			var return_data = data;	
+			 $("#sighting_title").empty();
+			 $("#sighting_des").empty();
 			//obj = jQuery.parseJSON(return_data);
 			//$("#sighting_des").html(obj);
 			console.log("sucess");
-			console.log(return_data);
+			console.log(data);
+			var firstResult = data.split('; ');
+			var spiltResult = firstResult[0].split(' - ');
+			
+			$("#sighting_title").html('The most recently reported UFO sighting: <br><br>'+spiltResult[0]);
+			$("#sighting_des").html(spiltResult[1]);
+			
+			startAudio();
+			$("#audioplayer").removeClass("hidden");	
 		 },
 		 error: function(data){
 			console.log("error");
@@ -104,6 +113,8 @@ function sighting_post() {
 		 data: {"newtitle":inputTitle, "newdes":inputDes, "newloc":inputLoc},
 		 cache: false,
 		 success: function(data) {
+			$("#sighting_title").empty();
+			$("#sighting_des").empty();
 			var return_data = data;
 			obj = jQuery.parseJSON(return_data);
 			$("#sighting_title").html('The most recently reported UFO sighting: <br><br>'+obj.title+' in '+obj.location);
@@ -139,6 +150,8 @@ function makeRequest() {
 		 data: {},
 		 cache: false,
 		 success: function(data) {
+			$("#sighting_title").empty();
+			$("#sighting_des").empty();
 			var return_data = data;			
 			var obj = jQuery.parseJSON(return_data);
 			$("#sighting_title").html("The most recently reported UFO sighting: <br><br>"+ obj.Title);
