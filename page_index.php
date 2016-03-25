@@ -40,19 +40,19 @@
                 <div class="pure-u-1 pure-u-md-1-3">
                     <div id="results">
                         <h2 id="sighting_title">
-                            Find the most recent sighting
+                            Find the most recent sighting:
                         </h2>
                         <h3 id="sighting_des">&nbsp;
-                        	
+                        	<img id="dataLoad" src="img/ajax-loader.gif" alt="ajax loading gif">
                         </h3>
                         <div id="loadUFO" class="pure-button pure-button-primary">               
-                            Load Data
+                            Load Most Recent
                         </div>
                     </div>
                 </div>
                 <div class="pure-u-1 pure-u-md-1-3">
                   <div id="dropdown">
-                    <h2>Where do you live?</h2>
+                    <h2>Find the most recent UFO sighting where you live:</h2>
                     <form method="POST" class="pure-form pure-form-stacked">
                              <fieldset>
                                 <select id="stateSelect" name="state">
@@ -115,11 +115,11 @@
                     </div>
                 <div class="pure-u-1 pure-u-md-1-3">
                     <div id="newsighting">
-                        <h2>Post a New Sighting</h2>
+                        <h2>Post your own UFO sighting:</h2>
                         <form method="POST" class="pure-form pure-form-stacked">
                          <fieldset>
                             <label for="newtitle">
-                                Name your Sighting
+                                Name your sighting
                             </label>
                             <input id="newtitle" required type="text" name="newtitle" placeholder="Sighting Title" value="">
                             <label for="newdes">
@@ -136,7 +136,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal"><!-- Place at bottom of page --></div>
+            <div class="modal"><!-- loading gif --></div>
         </div>
     </body>
 </html>

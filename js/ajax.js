@@ -17,6 +17,14 @@ $(document).ready(function() {
 });
 
 
+//loading gif show and hide on jaxa call control
+$('#dataLoad').ajaxStart(function() {
+    $(this).show();
+}).ajaxComplete(function() {
+    $(this).hide();
+});
+
+
 //song loading and control functions
 var audio;
 $(document).ready(function() {
