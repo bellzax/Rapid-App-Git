@@ -131,7 +131,7 @@
                             </label>
                             <input id="newloc" required type="text" name="newloc" placeholder="Sighting Location" value="">
                             <input class="pure-button pure-button-primary" id="newsubmit" type="button" value="Submit a Sighting">
-                         <fieldset>
+                         </fieldset>
                         </form>
                     </div>
                 </div>
